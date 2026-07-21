@@ -8,12 +8,13 @@ st.title("🤖 माझा बहुभाषिक AI Vision App")
 # Streamlit Secrets मधून लपवलेली API Key घेणे
 api_key = st.secrets["API_KEY"]
 genai.configure(api_key=api_key)
-model = genai.GenerativeModel('gemini-1.5-flash')
 
+# मॉडेल सेट करणे (अचूक नाव)
+model = genai.GenerativeModel('gemini-2.5-flash')
 
 # फोटो आणि भाषा निवडणे
 uploaded_file = st.file_uploader("📸 फोटो निवडा", type=["jpg", "jpeg", "png"])
-lang = st.selectbox("🗣️ तुमची भाषा निवडा:", ["मराठी", "हिंदी", "English"])
+lang = st.selectbox("🗣️ तुमची भाषा निवड:", ["मराठी", "हिंदी", "English"])
 
 if uploaded_file and st.button("Submit"):
     with st.spinner('माहिती शोधत आहे...'):
@@ -38,3 +39,4 @@ if uploaded_file and st.button("Submit"):
         tts = gTTS(text=response.text, lang=lang_code)
         tts.save("audio.mp3")
         st.audio("audio.mp3")
+        
