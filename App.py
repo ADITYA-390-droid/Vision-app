@@ -5,11 +5,10 @@ from gtts import gTTS
 
 st.title("🤖 माझा बहुभाषिक AI Vision App")
 
-# Streamlit Secrets मधून लपवलेली API Key घेणे
-api_key = st.secrets["API_KEY"]
-genai.configure(api_key=api_key)
+# थेट कोडमध्येच API Key टाकणे (Secrets चा विषयच संपला!)
+genai.configure(api_key="AQ.Ab8RN6IK3GshymPtFwuO85dD_T-AyDkCdRaJ8H--YTskZpaAaw")
 
-# गुगलचे स्टँडर्ड आणि फास्ट व्हिजन मॉडेल
+# गुगलचे फास्ट व्हिजन मॉडेल
 model = genai.GenerativeModel('gemini-1.5-flash')
 
 # फोटो आणि भाषा निवडणे
