@@ -9,8 +9,8 @@ st.title("🤖 माझा बहुभाषिक AI Vision App")
 api_key = st.secrets["API_KEY"]
 genai.configure(api_key=api_key)
 
-# मॉडेल सेट करणे (अचूक नाव)
-model = genai.GenerativeModel('gemini-2.5-flash')
+# गुगलचे स्टँडर्ड व्हिजन मॉडेल
+model = genai.GenerativeModel('gemini-1.5-flash')
 
 # फोटो आणि भाषा निवडणे
 uploaded_file = st.file_uploader("📸 फोटो निवडा", type=["jpg", "jpeg", "png"])
