@@ -8,7 +8,8 @@ st.title("🤖 माझा बहुभाषिक AI Vision App")
 # Streamlit Secrets मधून लपवलेली API Key घेणे
 api_key = st.secrets["API_KEY"]
 genai.configure(api_key=api_key)
-model = genai.GenerativeModel('gemini-flash-latest')
+model = genai.GenerativeModel('gemini-1.5-flash')
+
 
 # फोटो आणि भाषा निवडणे
 uploaded_file = st.file_uploader("📸 फोटो निवडा", type=["jpg", "jpeg", "png"])
